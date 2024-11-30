@@ -1,0 +1,36 @@
+Get http://localhost:8000
+
+
+
+PORTONE_API_URL = "https://api.iamport.kr"
+url = f"{PORTONE_API_URL}/subscribe/payments/onetime"
+
+
+
+### 코튼 가져오는지 테스트
+GET http://127.0.0.1:8000/auth/token
+
+  {
+    "imp_key" : "0853007778015874",
+    "imp_secret" : "AhPDRFHV8dTlPSaUGPoR8EEgeXo0wXRzzbjhx1oyNtaP3nVtdMPKdmQ7oJuIgDyfXnD9hPBIsFdxjYBo"
+  }
+
+
+### 일회성 결제 테스트
+POST http://127.0.0.1:8000/payments/onetime
+Content-Type: application/json
+
+{
+    "pg": "nice",
+    "merchant_uid": "order_id_8237352", 
+    "card_number": "1234-1234-1234-1234", 
+    "expiry": "2019-01", 
+    "birth": "123456", 
+    "amount": 3000
+}
+
+
+
+
+
+
